@@ -1,0 +1,260 @@
+---
+title: "Osha Injury Report"
+format:
+  html:
+    fig-align: center
+    toc: true
+    toc-location: left
+    toc-expand: true
+    css: styles.css
+editor: visual
+---
+
+```{r}
+#| label: "Load libraries, Import"
+#| include: false 
+
+library(tidyverse)
+library(here)
+library(data.table)
+library(janitor)
+library(RColorBrewer)
+library(dygraphs)
+library(reactable)
+library(plotly)
+library(knitr)
+library(kableExtra)
+
+# 11 Agriculture, Forestry, Fishing and Hunting
+# 23 construction
+# 21 Mining, Quarrying, and Oil and Gas Extraction
+# 22 Utilities
+# 48, 49 Transportation and Warehousing
+# 31 - 33 Manufacturing
+# 72 Accommodation and Food Services
+
+osha_inj <- fread(here("data", "OSHA_severeinjurydata.csv")) %>% clean_names()
+
+```
+
+```{r}
+#| label: "Clean up data for analysis"
+#| include: false
+
+
+## Initial state variable in data is mix of abbreviations and names / territories
+
+## Load states in df to minimize recoding
+states <- as.data.frame(cbind(state_fix = toupper(state.name), 
+                              state_abb_fix = state.abb))
+
+
+
+## Join states w/ og data to create third variable. Recode leftover abbreviations
+osha_inj <- osha_inj %>% 
+            left_join(states, by = c("state" = "state_abb_fix")) %>% 
+            mutate(state_fix = ifelse(is.na(state_fix),
+                                  state, state_fix),
+                   state_fix = case_when(state_fix == "DC" ~ "DISTRICT OF COLUMBIA",
+                                         state_fix == "AS" ~ "AMERICAN SAMOA",
+                                         state_fix == "GU" ~ "GUAM",
+                                         state_fix == "MP" ~ "NORTHERN MARIANA ISLANDS",
+                                         state_fix == "PR" ~ "PUERTO RICO",
+                                         state_fix == "VI" ~ "VIRGIN ISLANDS",
+                                         TRUE ~ state_fix)
+               )
+
+## Join data by cleaned state variable. Fix leftover missings
+osha_inj <- osha_inj %>% 
+            left_join(states, by = c("state_fix")) %>% 
+            mutate(state_abb_fix = case_when(
+                                   state == "DC" | state == "DISTRICT OF COLUMBIA" ~ "DC",
+                                   state == "AS" | state == "AMERICAN SAMOA" ~ "AS",
+                                   state == "GU" | state == "GUAM" ~ "GU",
+                                   state == "MP" | state =="NORHTERN MARIANA ISLANDS" ~                                                                                          "MP",
+                                   state == "PR" | state == "PUERTO RICO" ~ "PR",
+                                   state == "VI" | state == "VIRGIN ISLANDS" ~ "VI",
+                                   TRUE ~ state_abb_fix)
+                ) %>% 
+           select(!c("state")) %>% 
+           rename(state = state_fix,
+                  state_abb = state_abb_fix)
+
+## Last bits of cleaning
+osha_inj <- osha_inj %>% 
+            mutate(date = as.Date(event_date, format = "%m/%d/%Y"),
+                   month = month(date),
+                   year = year(date)) %>% 
+                   mutate(industry = str_extract(primary_naics, "^.{2}")) %>% 
+                   mutate(industry_name = 
+                          case_when(
+                           industry == "11" ~ "Agriculture, Forestry, Fishing & Hunting",
+                           industry == "23" ~ "Construction",
+                           industry == "21" ~ "Mining, Quarrying, & Oil and Gas Extraction",
+                           industry == "22" ~ "Utilities",
+                           industry == "72" ~ "Accomodation & Food Services",
+                           industry %in% c("48", "49") ~ "Transportation & Warehousing",
+                           industry %in% c("31", "32", "33") ~ "Manufacturing",
+                           TRUE ~ "GETS FILTERED OUT"),
+         industry_name = factor(industry_name, levels = unique(industry_name))) 
+
+
+
+
+industry_filter <- c("11", "23", "21", "22", "48", "49",
+                     "31", "32", "33", "72")
+
+#inj_counts <- osha_inj[industry %chin% industry_filter, .N, by = industry]
+
+```
+
+```{r}
+#| label: "Calculate Summary Stats"
+#| include: false
+
+
+
+
+get_dt_counts <- function(grp, denom){
+  
+dat <- osha_inj[industry %chin% industry_filter, .N,
+                 keyby =  c(grp)][
+                   , `:=`(total = sum(N), 
+                          pct = (N / sum(N)) * 100), by = c(denom)]
+
+return(dat)
+}
+          
+inj_tbls <- list(all_inj = osha_inj[industry %chin% industry_filter, .N,
+                           by = industry_name][ , `:=`(total = sum(N), 
+                                                pct = (N / sum(N)) * 100)],
+                  ann_inj = get_dt_counts(c("year", "industry_name"), c("year")),
+                  st_inj = get_dt_counts(c("state", "industry_name"), c("state")),
+                  state_yr_inj = get_dt_counts(c("state", "year", "industry_name"),
+                                               c("state", "year"))
+                  
+)
+
+
+
+```
+
+```{r}
+#| label: "Let's make some plots"
+#| echo: false 
+industry_plot <- ggplot(inj_tbls$all_inj, aes(reorder(industry_name, N), N,
+                                           text = paste("Industry:", industry_name, "<br>",
+                                           "Count:", format(N, big.mark = ","), "<br>",
+                                           "Percent:", round(pct, 2), "<br>"))) +
+                 geom_col(aes(fill = industry_name)) +
+                 theme(panel.grid.major.y = element_blank(),
+                       panel.grid.minor.y = element_blank(),
+                       panel.grid.minor.x = element_blank(),
+                       panel.grid.major.x = element_line(color = "black",
+                                                         linetype = "dashed",
+                                                         linewidth = .5),
+                       panel.background = element_rect(fill = "ghostwhite"),
+                       legend.position = "none") +
+                 scale_fill_brewer(palette = "Dark2") +
+                 labs(x = "", y = "Count") +
+                 scale_y_continuous(labels = scales::comma) +
+                 coord_flip()
+
+
+
+
+industry_ann_ts <- inj_tbls$ann_inj %>% 
+                   mutate(year_coerce = as.Date(ISOdate(year, 1,1))) %>% 
+                   ggplot(aes(year_coerce, N, color = industry_name, group = industry_name,
+                              text = paste("Industry:", industry_name, "<br>",
+                                           "Count:", format(N, big.mark = ","), "<br>",
+                                           "Percent:", round(pct, 2), "<br>",
+                                           "Year:", year))) +
+                           
+                   geom_line(linetype = "solid") +
+                   geom_point() +
+                   theme(panel.grid.major.x = element_blank(),
+                         panel.grid.minor.x = element_blank(),
+                         panel.grid.minor.y  = element_blank(),
+                         panel.grid.major.y = element_line(color = "gray",                                                                            linetype ="dashed",
+                                                           linewidth = .25),
+                         panel.background = element_rect(fill = "ghostwhite"),
+                         legend.position = "none") +
+                   labs(x = "", y = "Count") +
+                   scale_y_continuous(labels = scales::comma) +
+                   scale_color_brewer(palette = "Dark2")
+
+
+
+
+
+
+                      
+```
+
+## Figure 1.0: Total Injuries, By Selected Industry:
+
+```{r}
+#| label: Render bar graph
+#| echo: false
+
+ggplotly(industry_plot, tooltip = "text")
+
+```
+
+*Hover for total count of injuries by industry, percentage of all injuries by injury*
+
+## Figure 1.1: Total Injuries By Selected Industry, 2015 - 2022, 
+
+```{r}
+#| label: Render time series
+#| echo: false
+
+ggplotly(industry_ann_ts, tooltip = "text")
+
+```
+
+*Hover for annual count of injuries by industry, industry percentage of total annual injuries*
+
+## Table 1.0: Total Injuries By State
+
+To help guide queries for the last table, here's a table that shows the top 10 states with the most injuries:
+
+```{r}
+#| label: States with top 10 most injuries
+#| echo: false
+#| fig-cap: "States with the Most Injuries"
+
+state_injuries <- inj_tbls$st_inj[, .(state, total)][
+                  order(-total, state)]
+state_injuries <- unique(state_injuries, by = c("state"))
+top_ten_states <- state_injuries[1:10]
+
+top_ten_states %>%
+kbl() %>% 
+kable_styling()
+
+
+```
+
+This table is arranged by state, year, and total number of injuries. For each state, the industry with the most industries will be displayed at the top. Search for your state of interest.
+
+## Table 1.1: Injuries By State, Year and Industry
+
+```{r}
+#| label: "Create Reactable State table"
+#| echo: false
+
+inj_tbls$state_yr_inj$pct <- round(inj_tbls$state_yr_inj$pct, 2)
+
+inj_tbls$state_yr_inj <- inj_tbls$state_yr_inj %>% 
+                         relocate(pct, .after = N) %>% 
+                         arrange(state, year, desc(N))
+  
+
+
+inj_tbls$state_yr_inj %>% reactable(searchable = TRUE,
+                                    pageSizeOptions = c(25))
+```
+
+## 

@@ -1,0 +1,57 @@
+year,industry_name,N,total,pct
+2015,Manufacturing,3441,6804,50.5731922398589
+2015,Transportation & Warehousing,823,6804,12.0958259847149
+2015,"Mining, Quarrying, & Oil and Gas Extraction",331,6804,4.86478542034098
+2015,Accomodation & Food Services,202,6804,2.96884185773075
+2015,Construction,1714,6804,25.191064079953
+2015,Utilities,119,6804,1.74897119341564
+2015,"Agriculture, Forestry, Fishing & Hunting",174,6804,2.55731922398589
+2016,Manufacturing,3374,6915,48.7924801156905
+2016,Transportation & Warehousing,895,6915,12.94287780188
+2016,"Mining, Quarrying, & Oil and Gas Extraction",239,6915,3.45625451916124
+2016,Accomodation & Food Services,216,6915,3.1236442516269
+2016,Construction,1868,6915,27.0137382501808
+2016,Utilities,133,6915,1.9233550253073
+2016,"Agriculture, Forestry, Fishing & Hunting",190,6915,2.74765003615329
+2017,Manufacturing,3433,7142,48.0677681321759
+2017,Transportation & Warehousing,902,7142,12.629515541865
+2017,"Mining, Quarrying, & Oil and Gas Extraction",379,7142,5.30663679641557
+2017,Accomodation & Food Services,236,7142,3.30439652758331
+2017,Construction,1862,7142,26.0711285354243
+2017,Utilities,138,7142,1.93223186782414
+2017,"Agriculture, Forestry, Fishing & Hunting",192,7142,2.68832259871185
+2018,Manufacturing,3614,7474,48.3542948889484
+2018,Transportation & Warehousing,949,7474,12.6973508161627
+2018,"Mining, Quarrying, & Oil and Gas Extraction",403,7474,5.39202568905539
+2018,Accomodation & Food Services,209,7474,2.7963607171528
+2018,Construction,1969,7474,26.3446614931764
+2018,Utilities,123,7474,1.64570511105165
+2018,"Agriculture, Forestry, Fishing & Hunting",207,7474,2.76960128445277
+2019,Manufacturing,3483,7336,47.4781897491821
+2019,Transportation & Warehousing,967,7336,13.1815703380589
+2019,"Mining, Quarrying, & Oil and Gas Extraction",367,7336,5.00272628135224
+2019,Accomodation & Food Services,203,7336,2.76717557251908
+2019,Construction,1956,7336,26.6630316248637
+2019,Utilities,149,7336,2.03107960741549
+2019,"Agriculture, Forestry, Fishing & Hunting",211,7336,2.87622682660851
+2020,Manufacturing,2836,6002,47.2509163612129
+2020,Transportation & Warehousing,808,6002,13.4621792735755
+2020,"Mining, Quarrying, & Oil and Gas Extraction",149,6002,2.48250583138954
+2020,Accomodation & Food Services,171,6002,2.84905031656115
+2020,Construction,1729,6002,28.807064311896
+2020,Utilities,138,6002,2.29923358880373
+2020,"Agriculture, Forestry, Fishing & Hunting",171,6002,2.84905031656115
+2021,Manufacturing,2948,5865,50.2642796248934
+2021,Transportation & Warehousing,816,5865,13.9130434782609
+2021,"Mining, Quarrying, & Oil and Gas Extraction",162,5865,2.76214833759591
+2021,Accomodation & Food Services,159,5865,2.71099744245524
+2021,Construction,1528,5865,26.0528559249787
+2021,Utilities,109,5865,1.85848252344416
+2021,"Agriculture, Forestry, Fishing & Hunting",143,5865,2.4381926683717
+2022,Manufacturing,2267,4653,48.7212551042338
+2022,Transportation & Warehousing,660,4653,14.1843971631206
+2022,"Mining, Quarrying, & Oil and Gas Extraction",182,4653,3.91145497528476
+2022,Accomodation & Food Services,158,4653,3.39565871480765
+2022,Construction,1164,4653,25.0161186331399
+2022,Utilities,84,4653,1.80528691166989
+2022,"Agriculture, Forestry, Fishing & Hunting",138,4653,2.96582849774339
