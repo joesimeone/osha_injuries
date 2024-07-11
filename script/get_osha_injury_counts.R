@@ -2,6 +2,7 @@ library(tidyverse)
 library(here)
 library(data.table)
 library(janitor)
+library(readxl)
 
 
 
@@ -16,7 +17,31 @@ library(janitor)
 
 
 # Import data -------------------------------------------------------------
+
+## Injury data
 osha_inj <- fread(here("data", "OSHA_severeinjurydata.csv")) %>% clean_names()
+
+## employment data
+files <- list.files(here("data"), pattern = ".xlsx", full.names = TRUE)
+
+bls_employ <- map(files, ~read_xlsx(.x, sheet = "US_St_Cn_MSA") %>% clean_names())
+map(bls_employ, as.data.table)
+map(bls_employ, names)
+
+
+# Vectors for cleaning ----------------------------------------------------
+
+## To format states
+states <- as.data.frame(cbind(state_fix = toupper(state.name), 
+                              state_abb_fix = state.abb))
+
+## To filter industries 
+industry_filter <- c("11", "23", "21", "22", "48", "49",
+                     "31", "32", "33", "72")
+
+## To select bls vars
+bls_vars <- c("st", "st_name", "year", 
+              "naics", "industry", "annual_average_employment")
 
 # Clean osha data ---------------------------------------------------------
 states <- as.data.frame(cbind(state_fix = toupper(state.name), 
@@ -26,17 +51,17 @@ states <- as.data.frame(cbind(state_fix = toupper(state.name),
 
 ## Join states w/ og data to create third variable. Recode leftover abbreviations
 osha_inj <- osha_inj %>% 
-  left_join(states, by = c("state" = "state_abb_fix")) %>% 
-  mutate(state_fix = ifelse(is.na(state_fix),
-                            state, state_fix),
-         state_fix = case_when(state_fix == "DC" ~ "DISTRICT OF COLUMBIA",
-                               state_fix == "AS" ~ "AMERICAN SAMOA",
-                               state_fix == "GU" ~ "GUAM",
-                               state_fix == "MP" ~ "NORTHERN MARIANA ISLANDS",
-                               state_fix == "PR" ~ "PUERTO RICO",
-                               state_fix == "VI" ~ "VIRGIN ISLANDS",
-                               TRUE ~ state_fix)
-  )
+            left_join(states, by = c("state" = "state_abb_fix")) %>% 
+            mutate(state_fix = ifelse(is.na(state_fix),
+                                      state, state_fix),
+            state_fix = case_when(state_fix == "DC" ~ "DISTRICT OF COLUMBIA",
+                                  state_fix == "AS" ~ "AMERICAN SAMOA",
+                                  state_fix == "GU" ~ "GUAM",
+                                  state_fix == "MP" ~ "NORTHERN MARIANA ISLANDS",
+                                  state_fix == "PR" ~ "PUERTO RICO",
+                                  state_fix == "VI" ~ "VIRGIN ISLANDS",
+                                  TRUE ~ state_fix)
+      )
 
 ## Join data by cleaned state variable. Fix leftover missings
 osha_inj <- osha_inj %>% 
@@ -76,6 +101,26 @@ osha_inj <- osha_inj %>%
 ## but going to do some dplyr stuff for what I don't feel like thinking hard about right now. 
 
 
+
+# Clean BLS data ----------------------------------------------------------
+
+library(data.table)
+library(purrr)
+
+tst <- map(bls_employ, 
+           ~.x[.x$naics %chin% industry_filter,]
+)
+
+map(bls_employ, ~tabyl(.x, industry))
+
+tst <- map(bls_employ, 
+           ~.x[.x$naics %chin% industry_filter ]
+)
+
+
+bls_employ[[1]][, (bls_vars)]
+
+map(bls_employ, ~tabyl(.x, st_name))
 
 
 # Get counts, percentages -------------------------------------------------
