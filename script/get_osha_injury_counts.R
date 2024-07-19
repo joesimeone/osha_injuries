@@ -22,11 +22,27 @@ library(readxl)
 osha_inj <- fread(here("data", "OSHA_severeinjurydata.csv")) %>% clean_names()
 
 ## employment data
-files <- list.files(here("data"), pattern = ".xlsx", full.names = TRUE)
+files <- list.files(here("summary_data"), pattern = "_emp", full.names = TRUE)
 
-bls_employ <- map(files, ~read_xlsx(.x, sheet = "US_St_Cn_MSA") %>% clean_names())
-map(bls_employ, as.data.table)
-map(bls_employ, names)
+
+
+emp_tbl_names <- c("ann_emp", "all_emp", "st_emp", "st_yr_emp")
+
+
+
+bls_employ <- map(files, ~read_csv(.x) %>% clean_names())
+bls_employ <- map(bls_employ, as.data.table)
+
+names(bls_employ) <- emp_tbl_names
+
+## Reorder list to match up w/ injury_tbls
+
+bls_employ <- list(all_emp = bls_employ$all_emp, 
+                   ann_emp = bls_employ$ann_emp,
+                   st_emp = bls_employ$st_emp, 
+                   st_yr_emp = bls_employ$st_yr_emp)
+
+names(bls_employ) <- emp_tbl_names
 
 
 # Vectors for cleaning ----------------------------------------------------
@@ -102,26 +118,6 @@ osha_inj <- osha_inj %>%
 
 
 
-# Clean BLS data ----------------------------------------------------------
-
-library(data.table)
-library(purrr)
-
-tst <- map(bls_employ, 
-           ~.x[.x$naics %chin% industry_filter,]
-)
-
-map(bls_employ, ~tabyl(.x, industry))
-
-tst <- map(bls_employ, 
-           ~.x[.x$naics %chin% industry_filter ]
-)
-
-
-bls_employ[[1]][, (bls_vars)]
-
-map(bls_employ, ~tabyl(.x, st_name))
-
 
 # Get counts, percentages -------------------------------------------------
 industry_filter <- c("11", "23", "21", "22", "48", "49",
@@ -151,6 +147,36 @@ inj_tbls <- list(all_inj = osha_inj[industry %chin% industry_filter, .N,
                                               c("state", "year"))
                  
 )
+
+
+
+
+
+# Join injury - employment tables -----------------------------------------
+## Prep employment table for join ------------------------------------------
+bls_employ <- map(bls_employ, 
+                  ~.x %>% mutate(industry_name = factor(industry_name, 
+                                                        levels = unique(industry_name))
+                  ))
+
+bls_employ$st_emp$state <-toupper(bls_employ$st_emp$state)
+bls_employ$st_yr_emp$state <-toupper(bls_employ$st_yr_emp$state)
+
+
+
+## How would you iterate this?? 
+
+inj_emp_tbls <- list( 
+                    all_industry = inj_tbls$all_inj[bls_employ$all_emp,
+                                                    on = "industry_name"],
+                    ann_industry = inj_tbls$ann_inj[bls_employ$ann_emp,
+                                                    on = c("industry_name", "year")],
+                    st_industry = inj_tbls$st_inj[bls_employ$st_emp,
+                                                  on = c("industry_name", "state")],
+                    st_yr_industry = inj_tbls$state_yr_inj[bls_employ$st_yr_emp,
+                                                           on = c("industry_name", "state",
+                                                                  "year")]
+                    )
 
 
 
