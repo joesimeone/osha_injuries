@@ -31,6 +31,12 @@ states <- as.data.frame(cbind(state_fix = toupper(state.name),
                               state_abb_fix = state.abb))
 
 
+## This guys here if something messed up. Download from query - It's quicker... 
+bls_st_industry <- read.csv(here("data", "qecw_data_pull_7.19.24"), 
+                            colClasses = c(area_fips = "character")) %>% 
+    select(-state, -u_s_total.x, -u_s_total.y, -state_name)
+
+
 ## Check if we have all states (staes from osha_injury script)
 states$state_fix <- snakecase::to_mixed_case(states$state_fix)
 st_diff <- setdiff(bls_st_tbl$state_name, states$state_fix) 
@@ -43,33 +49,33 @@ print(st_diff)
 ## ----------------------------------------------------------------------------
 
 ## Get codes for states of interest
-filter(bls_st_tbl, state_name  %in% c("New Jersey", "Texas", 
-                                      "Florida", "Pennsylvania"))
-
-## Load vectors to help iterate data query
-years <- c("2015", "2016", "2017", "2018", 
-           "2019", "2020", "2021", "2022")
-
-qtr <- c("1", "2", "3", "4")
-
-st_codes <- c("12000", "34000", "42000", "48000")
-
-qcewGetAreaData <- function(year, qtr, area) {
-  url <- "http://data.bls.gov/cew/data/api/YEAR/QTR/area/AREA.csv"
-  url <- sub("YEAR", year, url, ignore.case=FALSE)
-  url <- sub("QTR", tolower(qtr), url, ignore.case=FALSE)
-  url <- sub("AREA", toupper(area), url, ignore.case=FALSE)
-  read.csv(url, header = TRUE, sep = ",", quote="\"", dec=".", na.strings=" ", skip=0)
-}
-
-## All possible combinations of quarter, state, year, that we can use in pmap with qcew function
-query_combos <- expand.grid(year = years,
-                            qtr = qtr,
-                            area = st_codes)
-
-
-## Create a list of state, year, quarter combos. Each list element represents: individual state, year, quarter 
-bls_st_list <- pmap(query_combos, qcewGetAreaData)
+# filter(bls_st_tbl, state_name  %in% c("New Jersey", "Texas", 
+#                                       "Florida", "Pennsylvania"))
+# 
+# ## Load vectors to help iterate data query
+# years <- c("2015", "2016", "2017", "2018", 
+#            "2019", "2020", "2021", "2022")
+# 
+# qtr <- c("1", "2", "3", "4")
+# 
+# st_codes <- unique(bls_st_tbl$us000)
+# 
+# qcewGetAreaData <- function(year, qtr, area) {
+#   url <- "http://data.bls.gov/cew/data/api/YEAR/QTR/area/AREA.csv"
+#   url <- sub("YEAR", year, url, ignore.case=FALSE)
+#   url <- sub("QTR", tolower(qtr), url, ignore.case=FALSE)
+#   url <- sub("AREA", toupper(area), url, ignore.case=FALSE)
+#   read.csv(url, header = TRUE, sep = ",", quote="\"", dec=".", na.strings=" ", skip=0)
+# }
+# 
+# ## All possible combinations of quarter, state, year, that we can use in pmap with qcew function
+# query_combos <- expand.grid(year = years,
+#                             qtr = qtr,
+#                             area = st_codes)
+# 
+# 
+# ## Create a list of state, year, quarter combos. Each list element represents: individual state, year, quarter 
+# bls_st_list <- pmap(query_combos, qcewGetAreaData)
 
 
 
@@ -96,12 +102,26 @@ bls_st_industry <- list_rbind(bls_st_list) %>%
                            area_fips = as.character(area_fips)
                     )
 
+## Correcting bls_codes - They're off from bls_st_tbl on import
+
 bls_st_industry <- bls_st_industry %>% 
-                   left_join(bls_st_tbl, by = c("area_fips" = "us000")) %>% 
-                   rename(state = state_name)
-                    
+                   mutate(string_fixer = nchar(area_fips),
+                          corrected_code = if_else(string_fixer == 4,
+                                                   paste("0", area_fips, sep = ""),
+                                                   area_fips)) %>%
+             
+                  select(-string_fixer, -area_fips) %>% 
+                  rename(area_fips = corrected_code)
+
+
+bls_st_industry <- bls_st_industry %>% 
+                   left_join(bls_st_tbl, by = c("area_fips" = "us000"))
+
+
+bls_st_industry <- rename(bls_st_industry, state = state_name)
 bls_st_industry <- as.data.table(bls_st_industry)
 
+#write_csv(bls_st_industry, here("data", "qecw_data_pull_7.19.24.csv"))
 # ------------------------------------------------------------------------------
 ## 4. Derive Industry employment numbers ----
 # ------------------------------------------------------------------------------
@@ -139,4 +159,5 @@ map2(employ_tbls, csv_names,
                          )
                )
      )
+
 
