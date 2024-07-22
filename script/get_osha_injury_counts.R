@@ -25,24 +25,23 @@ osha_inj <- fread(here("data", "OSHA_severeinjurydata.csv")) %>% clean_names()
 files <- list.files(here("summary_data"), pattern = "_emp", full.names = TRUE)
 
 
-
+## Create vector to name / track list elements
 emp_tbl_names <- c("ann_emp", "all_emp", "st_emp", "st_yr_emp")
 
-
-
+## Import bls data from files 
 bls_employ <- map(files, ~read_csv(.x) %>% clean_names())
 bls_employ <- map(bls_employ, as.data.table)
 
+## Name list
 names(bls_employ) <- emp_tbl_names
 
 ## Reorder list to match up w/ injury_tbls
-
 bls_employ <- list(all_emp = bls_employ$all_emp, 
                    ann_emp = bls_employ$ann_emp,
                    st_emp = bls_employ$st_emp, 
                    st_yr_emp = bls_employ$st_yr_emp)
 
-names(bls_employ) <- emp_tbl_names
+
 
 
 # Vectors for cleaning ----------------------------------------------------
@@ -177,6 +176,25 @@ inj_emp_tbls <- list(
                                                            on = c("industry_name", "state",
                                                                   "year")]
                     )
+
+## Final Clean up ----------------------------------------------------------
+## Won't be as efficient because I'm messing around with data.table still. 
+
+## Replace NAs with 0. NAs created on join for states / state years with no injuries. 
+inj_emp_tbls <- map(inj_emp_tbls, 
+                     ~ .x %>% mutate(across(everything(), 
+                                            ~ ifelse(is.na(.), 0, 
+                                                     .))
+                                     )
+                     )
+
+## This copy supresses a warning 
+## (1: Invalid .internal.selfref detected and fixed by taking a (shallow) copy of the data.table so that := can add this new column ) 
+inj_emp_tbls <- map(inj_emp_tbls,~ {
+  dt <- copy(.x)  # Make a shallow copy of the data.table
+  dt[, injury_rate_per_100k := (N / total_emp) * 100000]
+  dt
+})
 
 
 
