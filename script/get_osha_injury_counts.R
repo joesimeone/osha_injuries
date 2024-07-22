@@ -196,7 +196,19 @@ inj_emp_tbls <- map(inj_emp_tbls,~ {
   dt
 })
 
-
+inj_emp_tbls <- map(inj_emp_tbls, 
+                    ~ .x %>% mutate(ind_name_fix = factor(industry_name, levels = 1:7,
+                                                                labels = c("Utilities",
+                                                                            "Transportation & Warehousing",
+                                                                            "Accomodation & Food Services", 
+                                                                            "Construction", 
+                                                                            "Agriculture, Forestry, Fishing & Hunting", 
+                                                                            "Mining, Quarrying, & Oil and Gas Extraction", 
+                                                                            "Manufacturing"))
+                                                                ) %>% 
+                                select(-industry_name) %>% 
+                                rename(industry_name = ind_name_fix)
+                                          )
 
 # Write tables  -----------------------------------------------------------
 tbl_names <- list(
@@ -208,5 +220,5 @@ tbl_names <- list(
 
 for (i in 1:length(inj_tbls)){
   
-  fwrite(inj_tbls[[i]], here("summary_data", tbl_names[[i]]))}
+  fwrite(inj_emp_tbls[[i]], here("summary_data", tbl_names[[i]]))}
                   
