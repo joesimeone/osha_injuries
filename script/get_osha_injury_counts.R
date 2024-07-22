@@ -19,7 +19,7 @@ library(readxl)
 # Import data -------------------------------------------------------------
 
 ## Injury data
-osha_inj <- fread(here("data", "OSHA_severeinjurydata.csv")) %>% clean_names()
+osha_inj <- fread(here("data", "osha_severe_injuries_15tonov23.csv")) %>% clean_names()
 
 ## employment data
 files <- list.files(here("summary_data"), pattern = "_emp", full.names = TRUE)
