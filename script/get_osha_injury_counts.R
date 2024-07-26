@@ -99,6 +99,7 @@ osha_inj <- osha_inj %>%
             mutate(date = as.Date(event_date, format = "%m/%d/%Y"),
                    month = month(date),
                    year = year(date)) %>% 
+            filter(year != 2023) %>% 
             mutate(industry = str_extract(primary_naics, "^.{2}")) %>% 
             mutate(industry_name = 
                      case_when(
