@@ -130,7 +130,7 @@ inj_counts <- osha_inj[industry %chin% industry_filter, .N, by = industry]
 get_dt_counts <- function(grp, denom){
   
   dat <- osha_inj[industry %chin% industry_filter, .N,
-                  keyby =  c(grp)][
+                  by =  c(grp)][
                     , `:=`(total = sum(N), 
                            pct = (N / sum(N)) * 100), by = c(denom)]
   

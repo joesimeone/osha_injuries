@@ -20,17 +20,13 @@ format:
 editor: visual
 ---
 
-## Intro: 
+## Intro:
+
 Welcome to the OSHA Severe Injury Data exploratory analysis. Here you'll find information on severe injuries trends for select injuries between 2015 and 2022
 
-
-Data for this document comes from two sources:
-[Quarto](https://quarto.org)
-1. [OSHA Severe Injury Data](https://www.osha.gov/severeinjury)
-2. [Quarterly Census of Employment & Wages (QCEW)](https://www.bls.gov/cew/)
+Data for this document comes from two sources: [Quarto](https://quarto.org) 1. [OSHA Severe Injury Data](https://www.osha.gov/severeinjury) 2. [Quarterly Census of Employment & Wages (QCEW)](https://www.bls.gov/cew/)
 
 Severe injuries were defined as "defined as an amputation, in-patient hospitalization, or loss of an eye." Industries were identified by primary North American Industry Classification System (NAICS) NAICS code:
-
 
 ```{r}
 #| label: "Load libraries, Import"
@@ -88,7 +84,7 @@ kbl() %>%
 kable_styling()
 ```
 
-To provide context in changing employment trends, rates of injury per 100,000 jobs were calculated by taking the total number of industry specific injuries, and dividing them by the total number of a injury specific jobs in a given year. 
+To provide context in changing employment trends, rates of injury per 100,000 jobs were calculated by taking the total number of industry specific injuries, and dividing them by the total number of a injury specific jobs in a given year.
 
 ```{r}
 #| label: "Let's make some plots"
@@ -165,6 +161,7 @@ ggplotly(industry_plot, tooltip = "text")
 ## Figure 1.1: Rate of Total Injuries By Selected Industry, 2015 - 2022,
 
 #### Rate Per 100,000 Jobs:
+
 ```{r}
 #| label: Render Rate time series
 #| echo: false
@@ -178,6 +175,7 @@ ggplotly(ann_rate_ts, tooltip = "text")
 For context, I've also included the counts and denominators used to calculate our rates.
 
 #### Injury Counts:
+
 ```{r}
 #| label: Render Injury Count Time Series
 #| echo: false
@@ -185,14 +183,14 @@ For context, I've also included the counts and denominators used to calculate ou
 ggplotly(ann_counts_ts, tooltip = "text")
 ```
 
-### Annual Employment Counts: 
+### Annual Employment Counts:
+
 ```{r}
 #| label: Render Employment Count Time Series
 #| echo: false
 
 ggplotly(ann_emp_ts, tooltip = "text")
 ```
-
 
 ## Table 2: Total Injuries By State
 
@@ -236,5 +234,3 @@ inj_tbls$st_yr_inj <- inj_tbls$st_yr_inj %>%
 inj_tbls$st_yr_inj %>% reactable(searchable = TRUE,
                                     pageSizeOptions = c(25))
 ```
-
-
