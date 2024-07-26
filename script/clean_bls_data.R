@@ -86,7 +86,7 @@ bls_industry_filter <- c("11", "23", "21", "22", "48-49",
                          "31-33", "72")
 
 
-bls_st_industry <- list_rbind(bls_st_list) %>% 
+bls_st_industry <- bls_st_industry %>% 
                    filter(industry_code %in% bls_industry_filter) %>% 
                    mutate(industry_name = 
                            case_when(
@@ -128,7 +128,7 @@ bls_st_industry <- as.data.table(bls_st_industry)
 get_dt_sums <- function(grp, denom){
   
   dat <- bls_st_industry[, .(total_emp = sum(total_employment)),
-                  keyby =  c(grp)][
+                  by =  c(grp)][
                     , `:=`(all_emp_tot = sum(total_emp), 
                            pct_emp = (total_emp / sum(total_emp)) * 100), by = c(denom)]
   
