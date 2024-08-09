@@ -1,0 +1,365 @@
+state,industry_name,total_emp,all_emp_tot,pct_emp
+Alabama,Utilities,2149417,62356336,3.4469905351719192
+Alabama,Transportation & Warehousing,7365475,62356336,11.811911142437875
+Alabama,Accomodation & Food Services,17102578,62356336,27.427169550180114
+Alabama,Construction,8644325,62356336,13.862785331068842
+Alabama,"Agriculture, Forestry, Fishing & Hunting",1155087,62356336,1.8523971645800357
+Alabama,"Mining, Quarrying, & Oil and Gas Extraction",568187,62356336,0.9111936916883634
+Alabama,Manufacturing,25371267,62356336,40.68755258487285
+Alaska,Transportation & Warehousing,2025703,9170178,22.09011646229768
+Alaska,Accomodation & Food Services,2799531,9170178,30.528644045949815
+Alaska,Construction,1562462,9170178,17.038513320024975
+Alaska,Utilities,224878,9170178,2.4522751902961972
+Alaska,"Agriculture, Forestry, Fishing & Hunting",128583,9170178,1.4021865224426395
+Alaska,"Mining, Quarrying, & Oil and Gas Extraction",1223171,9170178,13.338574234873086
+Alaska,Manufacturing,1205850,9170178,13.149690224115606
+Arizona,Utilities,2167897,75077756,2.887535690331501
+Arizona,Transportation & Warehousing,10866229,75077756,14.473300187608166
+Arizona,Accomodation & Food Services,26353685,75077756,35.1018549355684
+Arizona,"Agriculture, Forestry, Fishing & Hunting",2335393,75077756,3.110632395566005
+Arizona,"Mining, Quarrying, & Oil and Gas Extraction",1180807,75077756,1.5727787601962955
+Arizona,Construction,15625126,75077756,20.811924639836064
+Arizona,Manufacturing,16548619,75077756,22.041973390893567
+Arkansas,Transportation & Warehousing,5878768,38889887,15.11644402566662
+Arkansas,Accomodation & Food Services,10050896,38889887,25.8444978253601
+Arkansas,"Agriculture, Forestry, Fishing & Hunting",1202683,38889887,3.092534056475916
+Arkansas,Construction,5114850,38889887,13.15213386966128
+Arkansas,Utilities,1091002,38889887,2.8053617126735286
+Arkansas,"Mining, Quarrying, & Oil and Gas Extraction",379207,38889887,0.9750786881946969
+Arkansas,Manufacturing,15172481,38889887,39.013949821967856
+California,Manufacturing,124827379,480175297,25.996210088250333
+California,Transportation & Warehousing,69958736,480175297,14.569415885632283
+California,Accomodation & Food Services,151561040,480175297,31.563689541488426
+California,Construction,81346573,480175297,16.941015814064254
+California,"Agriculture, Forestry, Fishing & Hunting",40236477,480175297,8.379539149845103
+California,Utilities,10328626,480175297,2.151011529441507
+California,"Mining, Quarrying, & Oil and Gas Extraction",1916466,480175297,0.39911799127808945
+Colorado,Manufacturing,14108397,70953383,19.88403710081026
+Colorado,Transportation & Warehousing,9056257,70953383,12.763671888625804
+Colorado,Accomodation & Food Services,25717606,70953383,36.24577844300955
+Colorado,Construction,16553166,70953383,23.329636023133666
+Colorado,"Agriculture, Forestry, Fishing & Hunting",1763017,70953383,2.4847539686726425
+Colorado,"Mining, Quarrying, & Oil and Gas Extraction",2383955,70953383,3.35988912607592
+Colorado,Utilities,1370985,70953383,1.93223344967216
+Connecticut,Manufacturing,15149364,39793287,38.070149872263634
+Connecticut,Transportation & Warehousing,5778722,39793287,14.521851386642174
+Connecticut,"Agriculture, Forestry, Fishing & Hunting",461636,39793287,1.160085116869084
+Connecticut,Utilities,701552,39793287,1.7629908280761026
+Connecticut,Construction,6025992,39793287,15.143237601859832
+Connecticut,Accomodation & Food Services,11626192,39793287,29.216465581242385
+Connecticut,"Mining, Quarrying, & Oil and Gas Extraction",49829,39793287,0.12521961304679355
+Delaware,Transportation & Warehousing,1651357,10270229,16.079066980882313
+Delaware,Accomodation & Food Services,3806235,10270229,37.06085813665888
+Delaware,Construction,2277607,10270229,22.17678885251731
+Delaware,Utilities,202180,10270229,1.9686026475164282
+Delaware,"Agriculture, Forestry, Fishing & Hunting",56043,10270229,0.545684034893477
+Delaware,"Mining, Quarrying, & Oil and Gas Extraction",2588,10270229,0.02519904862880857
+Delaware,Manufacturing,2274219,10270229,22.14380029890278
+Florida,"Agriculture, Forestry, Fishing & Hunting",6753562,221676023,3.0465911056154233
+Florida,Construction,51165284,221676023,23.081108776477823
+Florida,Transportation & Warehousing,32941951,221676023,14.860403283218412
+Florida,Accomodation & Food Services,91787463,221676023,41.406130332823594
+Florida,Utilities,2782657,221676023,1.2552810007783295
+Florida,"Mining, Quarrying, & Oil and Gas Extraction",384396,221676023,0.17340441009265128
+Florida,Manufacturing,35860710,221676023,16.17708109099377
+Georgia,"Agriculture, Forestry, Fishing & Hunting",2333089,123698875,1.8861036529232784
+Georgia,Construction,18476733,123698875,14.936864219662466
+Georgia,Manufacturing,37859156,123698875,30.605901630067372
+Georgia,Transportation & Warehousing,22890930,123698875,18.505366358424844
+Georgia,Accomodation & Food Services,39748628,123698875,32.13337873929735
+Georgia,Utilities,1889118,123698875,1.527190930394476
+Georgia,"Mining, Quarrying, & Oil and Gas Extraction",501221,123698875,0.4051944692302173
+Hawaii,Manufacturing,1620602,18628945,8.699376158982702
+Hawaii,Transportation & Warehousing,2938809,18628945,15.775498827228274
+Hawaii,Accomodation & Food Services,9664425,18628945,51.87854169948969
+Hawaii,Utilities,356522,18628945,1.9138067131552539
+Hawaii,Construction,3566956,18628945,19.14738596308057
+Hawaii,"Agriculture, Forestry, Fishing & Hunting",458615,18628945,2.4618409684499043
+Hawaii,"Mining, Quarrying, & Oil and Gas Extraction",23016,18628945,0.12354966961360399
+Idaho,Transportation & Warehousing,2392434,22890129,10.451815278105247
+Idaho,Accomodation & Food Services,6419861,22890129,28.046416863793123
+Idaho,"Agriculture, Forestry, Fishing & Hunting",2336929,22890129,10.209330843002238
+Idaho,Utilities,352158,22890129,1.5384710151699015
+Idaho,Construction,4695857,22890129,20.514768614890723
+Idaho,"Mining, Quarrying, & Oil and Gas Extraction",233973,22890129,1.0221567558662512
+Idaho,Manufacturing,6458917,22890129,28.217040629172512
+Illinois,Utilities,2355197,158126629,1.48943730407356
+Illinois,Manufacturing,55170374,158126629,34.889995662906344
+Illinois,Transportation & Warehousing,30056377,158126629,19.007789636747393
+Illinois,Accomodation & Food Services,46601553,158126629,29.471034255716667
+Illinois,Construction,21431012,158126629,13.553069546559424
+Illinois,"Agriculture, Forestry, Fishing & Hunting",1777102,158126629,1.1238473944828105
+Illinois,"Mining, Quarrying, & Oil and Gas Extraction",735014,158126629,0.46482619951380866
+Indiana,Transportation & Warehousing,14907695,107745323,13.836048363788375
+Indiana,Accomodation & Food Services,24996450,107745323,23.199568486142084
+Indiana,Utilities,1501065,107745323,1.3931602395400495
+Indiana,"Agriculture, Forestry, Fishing & Hunting",1485185,107745323,1.3784217807765076
+Indiana,"Mining, Quarrying, & Oil and Gas Extraction",539806,107745323,0.5010017929038089
+Indiana,Construction,13603910,107745323,12.625986559063914
+Indiana,Manufacturing,50711212,107745323,47.06581277778526
+Iowa,Transportation & Warehousing,6632895,49463340,13.409719198097015
+Iowa,Construction,7657033,49463340,15.48021827883034
+Iowa,Utilities,605922,49463340,1.224992085047229
+Iowa,Manufacturing,21035080,49463340,42.52660657367658
+Iowa,Accomodation & Food Services,11371904,49463340,22.990570390111138
+Iowa,"Agriculture, Forestry, Fishing & Hunting",1942189,49463340,3.926522147513694
+Iowa,"Mining, Quarrying, & Oil and Gas Extraction",218317,49463340,0.441371326723994
+Kansas,Transportation & Warehousing,5800992,40612505,14.283758167589022
+Kansas,Accomodation & Food Services,10463441,40612505,25.76408670186683
+Kansas,"Agriculture, Forestry, Fishing & Hunting",1197640,40612505,2.9489439274922833
+Kansas,Utilities,800625,40612505,1.9713755652353875
+Kansas,Construction,6061120,40612505,14.924270246319452
+Kansas,"Mining, Quarrying, & Oil and Gas Extraction",641891,40612505,1.5805255056293623
+Kansas,Manufacturing,15646796,40612505,38.527039885867666
+Kentucky,"Agriculture, Forestry, Fishing & Hunting",831954,61673383,1.3489676737856264
+Kentucky,Utilities,1207770,61673383,1.9583326570556379
+Kentucky,Transportation & Warehousing,11316338,61673383,18.34881994392946
+Kentucky,Accomodation & Food Services,16150256,61673383,26.186752233131106
+Kentucky,Construction,7560796,61673383,12.259415054303085
+Kentucky,"Mining, Quarrying, & Oil and Gas Extraction",918573,61673383,1.4894156203495437
+Kentucky,Manufacturing,23687696,61673383,38.40829681744554
+Louisiana,Manufacturing,12990844,58356844,22.261046193656394
+Louisiana,Transportation & Warehousing,7756006,58356844,13.290653620679008
+Louisiana,Accomodation & Food Services,18645069,58356844,31.95009826096833
+Louisiana,Utilities,1267935,58356844,2.172727161187812
+Louisiana,Construction,13600753,58356844,23.306183247332566
+Louisiana,"Agriculture, Forestry, Fishing & Hunting",867885,58356844,1.48720345466249
+Louisiana,"Mining, Quarrying, & Oil and Gas Extraction",3228352,58356844,5.532088061513401
+Maine,Manufacturing,5547243,16771327,33.075754828464085
+Maine,Transportation & Warehousing,1980944,16771327,11.811492316618715
+Maine,Construction,2936527,16771327,17.509210809615723
+Maine,"Agriculture, Forestry, Fishing & Hunting",698615,16771327,4.1655320416804225
+Maine,Utilities,281609,16771327,1.6791098283397612
+Maine,Accomodation & Food Services,5305280,16771327,31.633036551013525
+Maine,"Mining, Quarrying, & Oil and Gas Extraction",21109,16771327,0.1258636242677756
+Maryland,Transportation & Warehousing,9898804,58301434,16.978662994807298
+Maryland,Accomodation & Food Services,20925226,58301434,35.891443081828825
+Maryland,Utilities,945030,58301434,1.6209378314776959
+Maryland,Construction,15461054,58301434,26.51916589221459
+Maryland,"Agriculture, Forestry, Fishing & Hunting",543440,58301434,0.932121155030252
+Maryland,"Mining, Quarrying, & Oil and Gas Extraction",112424,58301434,0.19283230666333182
+Maryland,Manufacturing,10415456,58301434,17.864836737978006
+Massachusetts,Transportation & Warehousing,10102211,78605172,12.851840079937743
+Massachusetts,Accomodation & Food Services,27545177,78605172,35.04244860630799
+Massachusetts,Utilities,1462844,78605172,1.8610022251462028
+Massachusetts,Construction,15317723,78605172,19.486914932264256
+Massachusetts,"Agriculture, Forestry, Fishing & Hunting",927364,78605172,1.1797747863206762
+Massachusetts,"Mining, Quarrying, & Oil and Gas Extraction",91041,78605172,0.11582062310098373
+Massachusetts,Manufacturing,23158812,78605172,29.462198746922148
+Michigan,Transportation & Warehousing,14882958,129383838,11.502949850660636
+Michigan,Accomodation & Food Services,34938579,129383838,27.00382021439185
+Michigan,"Agriculture, Forestry, Fishing & Hunting",2995483,129383838,2.3151910209990834
+Michigan,Utilities,2143806,129383838,1.6569349256744106
+Michigan,Construction,16328788,129383838,12.620423271104386
+Michigan,Manufacturing,57576199,129383838,44.500302271138374
+Michigan,"Mining, Quarrying, & Oil and Gas Extraction",518025,129383838,0.4003784460312578
+Minnesota,Transportation & Warehousing,10211713,78041542,13.084970822334597
+Minnesota,Accomodation & Food Services,20975155,78041542,26.876909992373037
+Minnesota,"Agriculture, Forestry, Fishing & Hunting",2136586,78041542,2.737754720428256
+Minnesota,Construction,12301350,78041542,15.762566557180532
+Minnesota,Utilities,1319177,78041542,1.6903522998046348
+Minnesota,Manufacturing,30546310,78041542,39.14108975447974
+Minnesota,"Mining, Quarrying, & Oil and Gas Extraction",551251,78041542,0.7063558533992063
+Mississippi,Utilities,895655,37788137,2.3702015264737715
+Mississippi,Manufacturing,13870894,37788137,36.70700675188089
+Mississippi,Transportation & Warehousing,5296308,37788137,14.015795486292431
+Mississippi,Accomodation & Food Services,11795985,37788137,31.216106261073417
+Mississippi,"Agriculture, Forestry, Fishing & Hunting",1153704,37788137,3.053085152094161
+Mississippi,Construction,4410866,37788137,11.672620960382355
+Mississippi,"Mining, Quarrying, & Oil and Gas Extraction",364725,37788137,0.965183861802978
+Missouri,Manufacturing,25923852,77163279,33.59609951256737
+Missouri,Transportation & Warehousing,11321256,77163279,14.671818184398308
+Missouri,Accomodation & Food Services,24168520,77163279,31.321271352400665
+Missouri,Construction,12394896,77163279,16.063205401107954
+Missouri,Utilities,1723608,77163279,2.2337153401684757
+Missouri,"Agriculture, Forestry, Fishing & Hunting",1240015,77163279,1.6070014339333611
+Missouri,"Mining, Quarrying, & Oil and Gas Extraction",391132,77163279,0.5068887754238645
+Montana,Utilities,318288,13130800,2.4239802601517044
+Montana,Transportation & Warehousing,1445454,13130800,11.008118317238859
+Montana,Accomodation & Food Services,5124244,13130800,39.024613884911815
+Montana,Construction,3071424,13130800,23.3909891248058
+Montana,"Agriculture, Forestry, Fishing & Hunting",576860,13130800,4.39318244128309
+Montana,Manufacturing,1965410,13130800,14.967937977884057
+Montana,"Mining, Quarrying, & Oil and Gas Extraction",629120,13130800,4.791177993724678
+Nebraska,Transportation & Warehousing,4364752,28473111,15.329382166915304
+Nebraska,Accomodation & Food Services,7232347,28473111,25.400620957787158
+Nebraska,Manufacturing,9508932,28473111,33.39618210317798
+Nebraska,Utilities,747153,28473111,2.6240652101556448
+Nebraska,Construction,5119482,28473111,17.98005844882914
+Nebraska,"Agriculture, Forestry, Fishing & Hunting",1402156,28473111,4.924491742402156
+Nebraska,"Mining, Quarrying, & Oil and Gas Extraction",98289,28473111,0.3451993707326186
+Nevada,Transportation & Warehousing,7168138,51613340,13.888149846531924
+Nevada,Accomodation & Food Services,28479534,51613340,55.17863017584214
+Nevada,"Agriculture, Forestry, Fishing & Hunting",414430,51613340,0.8029513300243697
+Nevada,Utilities,508684,51613340,0.9855669096400272
+Nevada,Construction,8511714,51613340,16.49130631732029
+Nevada,"Mining, Quarrying, & Oil and Gas Extraction",1387690,51613340,2.6886266224972073
+Nevada,Manufacturing,5143150,51613340,9.964768798144046
+New Hampshire,Transportation & Warehousing,1764929,16973141,10.398364097723574
+New Hampshire,"Agriculture, Forestry, Fishing & Hunting",197957,16973141,1.1662956196498926
+New Hampshire,Construction,2697105,16973141,15.890429473248352
+New Hampshire,Manufacturing,6616527,16973141,38.9823368579805
+New Hampshire,Utilities,197873,16973141,1.165800720090642
+New Hampshire,Accomodation & Food Services,5444592,16973141,32.07769263214157
+New Hampshire,"Mining, Quarrying, & Oil and Gas Extraction",54158,16973141,0.3190805991654697
+New Jersey,Transportation & Warehousing,20950992,90750934,23.08625495799305
+New Jersey,Accomodation & Food Services,28377425,90750934,31.269567980424313
+New Jersey,Utilities,1791781,90750934,1.9743940045840191
+New Jersey,Construction,15175543,90750934,16.722189327550062
+New Jersey,"Agriculture, Forestry, Fishing & Hunting",1066014,90750934,1.17465898477695
+New Jersey,"Mining, Quarrying, & Oil and Gas Extraction",133353,90750934,0.14694394219678222
+New Jersey,Manufacturing,23255826,90750934,25.625990802474824
+New Mexico,Transportation & Warehousing,2379340,22116458,10.758232624772015
+New Mexico,Accomodation & Food Services,8534193,22116458,38.58752156425771
+New Mexico,"Agriculture, Forestry, Fishing & Hunting",1046706,22116458,4.732701773493749
+New Mexico,Construction,4788599,22116458,21.651744596716167
+New Mexico,Manufacturing,2646515,22116458,11.966269644081343
+New Mexico,"Mining, Quarrying, & Oil and Gas Extraction",2119699,22116458,9.584260734698114
+New Mexico,Utilities,601406,22116458,2.719269061980901
+New York,Manufacturing,41382472,187320587,22.09179069036336
+New York,Transportation & Warehousing,34753404,187320587,18.552901502492087
+New York,Accomodation & Food Services,68004069,187320587,36.30357457720331
+New York,Utilities,3604976,187320587,1.9244953572561674
+New York,Construction,36565117,187320587,19.520073893426353
+New York,"Agriculture, Forestry, Fishing & Hunting",2569249,187320587,1.3715785547906703
+New York,"Mining, Quarrying, & Oil and Gas Extraction",441300,187320587,0.2355854244680538
+North Carolina,Utilities,1395753,125891543,1.1086948072437242
+North Carolina,Transportation & Warehousing,16079869,125891543,12.772795230573989
+North Carolina,Accomodation & Food Services,39518746,125891543,31.39110464314509
+North Carolina,"Agriculture, Forestry, Fishing & Hunting",2589859,125891543,2.057214438939715
+North Carolina,"Mining, Quarrying, & Oil and Gas Extraction",289409,125891543,0.22988756282064157
+North Carolina,Construction,21199882,125891543,16.839798365168974
+North Carolina,Manufacturing,44818025,125891543,35.60050495210786
+North Dakota,Utilities,369195,12751367,2.8953366333193924
+North Dakota,Transportation & Warehousing,1837669,12751367,14.411545052385364
+North Dakota,Accomodation & Food Services,3235005,12751367,25.369868187465705
+North Dakota,Construction,2668716,12751367,20.928861980052805
+North Dakota,Manufacturing,2472835,12751367,19.392705111538238
+North Dakota,"Agriculture, Forestry, Fishing & Hunting",443474,12751367,3.4778545704158623
+North Dakota,"Mining, Quarrying, & Oil and Gas Extraction",1724473,12751367,13.523828464822635
+Ohio,Manufacturing,65504484,159346184,41.108285341806486
+Ohio,Transportation & Warehousing,23185133,159346184,14.550165192534514
+Ohio,Accomodation & Food Services,44270467,159346184,27.782571184760847
+Ohio,"Agriculture, Forestry, Fishing & Hunting",1615271,159346184,1.0136866534563513
+Ohio,Utilities,2712490,159346184,1.7022622895067259
+Ohio,Construction,21033719,159346184,13.200014253243742
+Ohio,"Mining, Quarrying, & Oil and Gas Extraction",1024620,159346184,0.6430150846913284
+Oklahoma,Manufacturing,12943579,48230672,26.836820768327673
+Oklahoma,Transportation & Warehousing,6211017,48230672,12.877732659416397
+Oklahoma,Accomodation & Food Services,14577877,48230672,30.225324250095458
+Oklahoma,"Agriculture, Forestry, Fishing & Hunting",979281,48230672,2.030411270238988
+Oklahoma,Utilities,1477112,48230672,3.0625988375198254
+Oklahoma,Construction,8007641,48230672,16.602797904205026
+Oklahoma,"Mining, Quarrying, & Oil and Gas Extraction",4034165,48230672,8.364314310196631
+Oregon,"Agriculture, Forestry, Fishing & Hunting",5297089,58774592,9.012549164101385
+Oregon,Utilities,798715,58774592,1.358946056146166
+Oregon,Manufacturing,18220566,58774592,31.000752842316626
+Oregon,Transportation & Warehousing,7237392,58774592,12.313810702420529
+Oregon,Construction,10380555,58774592,17.661636851515702
+Oregon,Accomodation & Food Services,16668418,58774592,28.35990422528156
+Oregon,"Mining, Quarrying, & Oil and Gas Extraction",171857,58774592,0.2924001582180273
+Pennsylvania,Manufacturing,53791889,158630611,33.910156848604714
+Pennsylvania,Transportation & Warehousing,29456673,158630611,18.569349770707245
+Pennsylvania,Accomodation & Food Services,42466470,158630611,26.770665341508394
+Pennsylvania,"Agriculture, Forestry, Fishing & Hunting",2425026,158630611,1.5287251210297614
+Pennsylvania,Construction,24725023,158630611,15.586539599220227
+Pennsylvania,Utilities,3313552,158630611,2.0888477823488936
+Pennsylvania,"Mining, Quarrying, & Oil and Gas Extraction",2451978,158630611,1.5457155365807673
+Rhode Island,Manufacturing,3221861,11010542,29.261602199056142
+Rhode Island,Transportation & Warehousing,1347809,11010542,12.241077687183791
+Rhode Island,Construction,1717471,11010542,15.598423765151615
+Rhode Island,Utilities,113872,11010542,1.0342088518439874
+Rhode Island,"Agriculture, Forestry, Fishing & Hunting",43587,11010542,0.39586607089823556
+Rhode Island,"Mining, Quarrying, & Oil and Gas Extraction",6433,11010542,0.05842582499571774
+Rhode Island,Accomodation & Food Services,4559509,11010542,41.41039560087051
+South Carolina,Manufacturing,23732027,64745720,36.65420200748405
+South Carolina,Transportation & Warehousing,7369788,64745720,11.38266436762152
+South Carolina,Accomodation & Food Services,21284766,64745720,32.87439849305869
+South Carolina,Utilities,1447215,64745720,2.2352288305698043
+South Carolina,"Agriculture, Forestry, Fishing & Hunting",1019497,64745720,1.574616824092774
+South Carolina,"Mining, Quarrying, & Oil and Gas Extraction",166793,64745720,0.25761239507414546
+South Carolina,Construction,9725634,64745720,15.021277082099019
+South Dakota,Transportation & Warehousing,1226064,12389655,9.89586877116433
+South Dakota,Accomodation & Food Services,3817086,12389655,30.808654478272395
+South Dakota,"Agriculture, Forestry, Fishing & Hunting",577293,12389655,4.659475990251544
+South Dakota,Construction,2278777,12389655,18.39257832441662
+South Dakota,Utilities,210773,12389655,1.7012015265961804
+South Dakota,Manufacturing,4191520,12389655,33.830804812563386
+South Dakota,"Mining, Quarrying, & Oil and Gas Extraction",88142,12389655,0.7114160967355427
+Tennessee,Utilities,2128347,94414621,2.254255725921942
+Tennessee,Construction,12500770,94414621,13.240290399513441
+Tennessee,Manufacturing,33331944,94414621,35.303794737469744
+Tennessee,Transportation & Warehousing,17715791,94414621,18.763821548359548
+Tennessee,Accomodation & Food Services,27659532,94414621,29.295814257412523
+Tennessee,"Mining, Quarrying, & Oil and Gas Extraction",329978,94414621,0.34949883450784597
+Tennessee,"Agriculture, Forestry, Fishing & Hunting",748259,94414621,0.7925244968149583
+Texas,Manufacturing,84612119,360612912,23.463419135696395
+Texas,Transportation & Warehousing,54902861,360612912,15.224873866967915
+Texas,Accomodation & Food Services,112708639,360612912,31.25474303593433
+Texas,Construction,73405900,360612912,20.355871228482243
+Texas,"Agriculture, Forestry, Fishing & Hunting",5725148,360612912,1.5876159198647883
+Texas,"Mining, Quarrying, & Oil and Gas Extraction",21240072,360612912,5.889992092130079
+Texas,Utilities,8018173,360612912,2.223484720924247
+Utah,Transportation & Warehousing,6701761,43363504,15.454841933437852
+Utah,Accomodation & Food Services,11628714,43363504,26.816822736465205
+Utah,Manufacturing,12908623,43363504,29.768403863304037
+Utah,"Agriculture, Forestry, Fishing & Hunting",556309,43363504,1.2828967880455417
+Utah,Utilities,392288,43363504,0.9046501408188785
+Utah,Construction,10291375,43363504,23.73280305023321
+Utah,"Mining, Quarrying, & Oil and Gas Extraction",884434,43363504,2.039581487695275
+Vermont,Transportation & Warehousing,855980,8624242,9.925278070814802
+Vermont,Utilities,161491,8624242,1.872523985296331
+Vermont,Construction,1507592,8624242,17.480863825481705
+Vermont,"Agriculture, Forestry, Fishing & Hunting",324715,8624242,3.7651424902037767
+Vermont,"Mining, Quarrying, & Oil and Gas Extraction",60152,8624242,0.6974757897563635
+Vermont,Manufacturing,2835670,8624242,32.880222980755875
+Vermont,Accomodation & Food Services,2878642,8624242,33.37849285769114
+Virginia,Manufacturing,23714915,92356200,25.677664304074877
+Virginia,Transportation & Warehousing,13581774,92356200,14.705860570270325
+Virginia,Accomodation & Food Services,31686483,92356200,34.30899387371936
+Virginia,Construction,19805377,92356200,21.44455596917153
+Virginia,Utilities,1772586,92356200,1.9192929115749675
+Virginia,"Agriculture, Forestry, Fishing & Hunting",1245815,92356200,1.3489240570746739
+Virginia,"Mining, Quarrying, & Oil and Gas Extraction",549250,92356200,0.5947083141142663
+Washington,Utilities,1852664,96553844,1.9187884430577409
+Washington,Manufacturing,28013852,96553844,29.013709697565226
+Washington,Transportation & Warehousing,12602296,96553844,13.052091432009687
+Washington,Accomodation & Food Services,25308363,96553844,26.211657611477385
+Washington,"Agriculture, Forestry, Fishing & Hunting",9765452,96553844,10.11399608284886
+Washington,Construction,18793516,96553844,19.46428564770554
+Washington,"Mining, Quarrying, & Oil and Gas Extraction",217701,96553844,0.22547108533555638
+West Virginia,Transportation & Warehousing,2557505,19277511,13.266780135672079
+West Virginia,Construction,3508498,19277511,18.199953303100177
+West Virginia,Utilities,551787,19277511,2.862335287994389
+West Virginia,Accomodation & Food Services,6102636,19277511,31.65676315785788
+West Virginia,"Agriculture, Forestry, Fishing & Hunting",170557,19277511,0.8847459612394982
+West Virginia,"Mining, Quarrying, & Oil and Gas Extraction",1942228,19277511,10.075097350482643
+West Virginia,Manufacturing,4444300,19277511,23.054324803653333
+Wisconsin,Transportation & Warehousing,10982785,94037454,11.67916030563737
+Wisconsin,Accomodation & Food Services,22076219,94037454,23.47598543023081
+Wisconsin,"Agriculture, Forestry, Fishing & Hunting",2686526,94037454,2.8568680730126954
+Wisconsin,"Mining, Quarrying, & Oil and Gas Extraction",313425,94037454,0.3332980495197158
+Wisconsin,Utilities,1092196,94037454,1.1614478631035672
+Wisconsin,Construction,11822375,94037454,12.571985413386457
+Wisconsin,Manufacturing,45063928,94037454,47.92125486510939
+Wyoming,Utilities,250361,9505049,2.633979056814962
+Wyoming,Transportation & Warehousing,1075008,9505049,11.309862789765734
+Wyoming,Accomodation & Food Services,3126813,9505049,32.89633751493548
+Wyoming,"Agriculture, Forestry, Fishing & Hunting",260759,9505049,2.743373548100594
+Wyoming,Construction,2046648,9505049,21.53221934994759
+Wyoming,"Mining, Quarrying, & Oil and Gas Extraction",1813309,9505049,19.077324062190527
+Wyoming,Manufacturing,932151,9505049,9.806903678245108
+Puerto Rico,Transportation & Warehousing,1941625,20562705,9.442459053903656
+Puerto Rico,Accomodation & Food Services,7107441,20562705,34.56471801740092
+Puerto Rico,Utilities,800352,20562705,3.8922505575020407
+Puerto Rico,Construction,2520094,20562705,12.255654107764519
+Puerto Rico,"Agriculture, Forestry, Fishing & Hunting",951002,20562705,4.624887630299613
+Puerto Rico,"Mining, Quarrying, & Oil and Gas Extraction",52548,20562705,0.2555500358537459
+Puerto Rico,Manufacturing,7189643,20562705,34.964480597275504
+Virgin Islands,Transportation & Warehousing,137237,1003607,13.67437652387837
+Virgin Islands,Utilities,57217,1003607,5.701136002439202
+Virgin Islands,"Agriculture, Forestry, Fishing & Hunting",555,1003607,0.05530053098473805
+Virgin Islands,"Mining, Quarrying, & Oil and Gas Extraction",7049,1003607,0.7023665638043577
+Virgin Islands,Construction,225027,1003607,22.421824479103872
+Virgin Islands,Manufacturing,61210,1003607,6.099000903740209
+Virgin Islands,Accomodation & Food Services,515312,1003607,51.34599499604925
