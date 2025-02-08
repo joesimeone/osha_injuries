@@ -17,7 +17,7 @@ format:
         href: https://www.bls.gov/cew/
       - text: NAICS Codes
         href: https://www.census.gov/programs-surveys/economic-census/year/2022/guidance/understanding-naics.html
-editor: visual
+editor: source
 ---
 
 ## Intro:
