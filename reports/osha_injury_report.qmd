@@ -8,8 +8,11 @@ format:
     toc-location: left
     toc-expand: true
     number-sections: true
-    css: styles.css
     embed-resources: true
+    theme: 
+      ["journal", "styles.scss"]
+    mainfont: "inter"
+    linkcolor: "#005DAD"
     other-links: 
       - text: OSHA Severe Injury Data
         href: https://www.osha.gov/severeinjury
@@ -22,9 +25,11 @@ editor: source
 
 ## Intro:
 
-Welcome to the OSHA Severe Injury Data exploratory analysis. Here you'll find information on severe injuries trends for select injuries between 2015 and 2022
+Welcome to the OSHA Severe Injury Data exploratory analysis. Here you'll find information on severe injuries trends for select injuries between 2015 and 2022.
 
-Data for this document comes from two sources: [Quarto](https://quarto.org) 1. [OSHA Severe Injury Data](https://www.osha.gov/severeinjury) 2. [Quarterly Census of Employment & Wages (QCEW)](https://www.bls.gov/cew/)
+Data for this document comes from two sources: 
+1. [OSHA Severe Injury Data](https://www.osha.gov/severeinjury) 
+2. [Quarterly Census of Employment & Wages (QCEW)](https://www.bls.gov/cew/)
 
 Severe injuries were defined as "defined as an amputation, in-patient hospitalization, or loss of an eye." Industries were identified by primary North American Industry Classification System (NAICS) NAICS code:
 
